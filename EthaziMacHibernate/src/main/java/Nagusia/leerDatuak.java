@@ -28,7 +28,7 @@ public class leerDatuak {
 
 		try {
 
-			File fileAloRural = new File("../Hibernate/src/main/resources/alojamientoRural.xml");
+			File fileAloRural = new File("../EthaziMacHibernate/src/main/resources/alojamientoRural.xml");
 			FileReader fr = new FileReader(fileAloRural);
 			BufferedReader br = new BufferedReader(fr);
 			String entrada;
@@ -69,6 +69,7 @@ public class leerDatuak {
 				String disf_inte = null;
 				String disf_orga = null;
 				String email = null;
+				String ostatu_mota = null;
 				String latitud = null;
 				String longitud = null;
 
@@ -158,6 +159,15 @@ public class leerDatuak {
 					}else{
 						email = " ";
 					}
+					
+					listaDeNodos = primerElemento.getElementsByTagName("lodgingtype");
+					elementos = (Element) listaDeNodos.item(0);
+					if (elementos != null) {
+						listaDeNodos = elementos.getChildNodes();
+						ostatu_mota = ((Node) listaDeNodos.item(0)).getNodeValue().toString();
+					}else{
+						ostatu_mota = " ";
+					}
 
 					listaDeNodos = primerElemento.getElementsByTagName("latwgs84");
 					elementos = (Element) listaDeNodos.item(0);
@@ -179,7 +189,7 @@ public class leerDatuak {
 
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, marks, direccion, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, direccion + ", " + marks, telefono, email, latitud, longitud);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);
@@ -196,7 +206,7 @@ public class leerDatuak {
 
 		try {
 
-			File fileAloRural = new File("../Hibernate/src/main/resources/camping.xml");
+			File fileAloRural = new File("../EthaziMacHibernate/src/main/resources/camping.xml");
 			FileReader fr = new FileReader(fileAloRural);
 			BufferedReader br = new BufferedReader(fr);
 			String entrada;
@@ -236,6 +246,7 @@ public class leerDatuak {
 				String disf_inte = null;
 				String disf_orga = null;
 				String email = null;
+				String ostatu_mota = null;
 				String latitud = null;
 				String longitud = null;
 
@@ -325,6 +336,15 @@ public class leerDatuak {
 					}else{
 						email = " ";
 					}
+					
+					listaDeNodos = primerElemento.getElementsByTagName("lodgingtype");
+					elementos = (Element) listaDeNodos.item(0);
+					if (elementos != null) {
+						listaDeNodos = elementos.getChildNodes();
+						ostatu_mota = ((Node) listaDeNodos.item(0)).getNodeValue().toString();
+					}else{
+						ostatu_mota = " ";
+					}
 
 					listaDeNodos = primerElemento.getElementsByTagName("latwgs84");
 					elementos = (Element) listaDeNodos.item(0);
@@ -346,7 +366,7 @@ public class leerDatuak {
 
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, marks, direccion, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, direccion + ", " + marks, telefono, email, latitud, longitud);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);
@@ -363,7 +383,7 @@ public class leerDatuak {
 
 		try {
 
-			File fileAloRural = new File("../Hibernate/src/main/resources/alberges.xml");
+			File fileAloRural = new File("../EthaziMacHibernate/src/main/resources/alberges.xml");
 			FileReader fr = new FileReader(fileAloRural);
 			BufferedReader br = new BufferedReader(fr);
 			String entrada;
@@ -403,6 +423,7 @@ public class leerDatuak {
 				String disf_inte = null;
 				String disf_orga = null;
 				String email = null;
+				String ostatu_mota = null;
 				String latitud = null;
 				String longitud = null;
 
@@ -492,6 +513,15 @@ public class leerDatuak {
 					}else{
 						email = " ";
 					}
+					
+					listaDeNodos = primerElemento.getElementsByTagName("lodgingtype");
+					elementos = (Element) listaDeNodos.item(0);
+					if (elementos != null) {
+						listaDeNodos = elementos.getChildNodes();
+						ostatu_mota = ((Node) listaDeNodos.item(0)).getNodeValue().toString();
+					}else{
+						ostatu_mota = " ";
+					}
 
 					listaDeNodos = primerElemento.getElementsByTagName("latwgs84");
 					elementos = (Element) listaDeNodos.item(0);
@@ -513,7 +543,7 @@ public class leerDatuak {
 
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, marks, direccion, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, direccion + ", " + marks, telefono, email, latitud, longitud);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);
