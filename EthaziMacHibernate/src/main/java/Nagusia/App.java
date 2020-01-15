@@ -19,10 +19,13 @@ public class App {
 
 		
 		leerDatuak ld = new leerDatuak();
+		System.out.println(0);
 		ld.leerCampings();
+		System.out.println(1);
 		ld.leerAlojamientoRurales();
+		System.out.println(2);
 		ld.leerAlbergues();
-
+		System.out.println(3);
 	}
 
 	protected void create(Ostatu ostatu) {

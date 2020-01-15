@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.StringReader;
+import java.util.Random;
 import java.util.Stack;
 
 import javax.swing.text.html.HTML.Tag;
@@ -68,6 +69,7 @@ public class leerDatuak {
 				String disf_audi = null;
 				String disf_inte = null;
 				String disf_orga = null;
+				int logelaKop = 0;
 				String email = null;
 				String ostatu_mota = null;
 				String latitud = null;
@@ -186,10 +188,12 @@ public class leerDatuak {
 					}else {
 						longitud = " ";
 					}
+					
+					logelaKop = randomZbk();
 
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, direccion + ", " + marks, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, direccion + ", " + marks, telefono, email, latitud, longitud);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);
@@ -245,6 +249,7 @@ public class leerDatuak {
 				String disf_audi = null;
 				String disf_inte = null;
 				String disf_orga = null;
+				int logelaKop = 0;
 				String email = null;
 				String ostatu_mota = null;
 				String latitud = null;
@@ -363,10 +368,12 @@ public class leerDatuak {
 					}else {
 						longitud = " ";
 					}
+					
+					logelaKop = randomZbk();
 
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, direccion + ", " + marks, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, direccion + ", " + marks, telefono, email, latitud, longitud);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);
@@ -383,8 +390,8 @@ public class leerDatuak {
 
 		try {
 
-			File fileAloRural = new File("../EthaziMacHibernate/src/main/resources/alberges.xml");
-			FileReader fr = new FileReader(fileAloRural);
+			File fileAlbergues = new File("../EthaziMacHibernate/src/main/resources/alberges.xml");
+			FileReader fr = new FileReader(fileAlbergues);
 			BufferedReader br = new BufferedReader(fr);
 			String entrada;
 			String cadena = "";
@@ -422,6 +429,7 @@ public class leerDatuak {
 				String disf_audi = null;
 				String disf_inte = null;
 				String disf_orga = null;
+				int logelaKop = 0;
 				String email = null;
 				String ostatu_mota = null;
 				String latitud = null;
@@ -541,9 +549,11 @@ public class leerDatuak {
 						longitud = " ";
 					}
 
+					logelaKop = randomZbk();
+
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, direccion + ", " + marks, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, direccion + ", " + marks, telefono, email, latitud, longitud);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);
@@ -554,5 +564,17 @@ public class leerDatuak {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	
+	public int randomZbk() {
+		int rndmZbk = 0;
+		
+		Random r = new Random();
+		int low = 5;
+		int high = 100;
+		rndmZbk = r.nextInt(high-low) + low;
+		
+		return rndmZbk;
 	}
 }
