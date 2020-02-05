@@ -36,12 +36,15 @@ public class Ostatu implements java.io.Serializable {
 	private String Latitudea;
 	@Column
 	private String Longitudea;
+	@Column
+	private int Prezioa;
+	@Column
+	private String Helbidea;
 
 	public Ostatu() {
 	}
 
-	public Ostatu(String izena, String deskribapena, String ostatuMota, int logelaKop, String kokapena,
-			String telefonoa, String email, String latitudea, String longitudea) {
+	public Ostatu(String izena, String deskribapena, String ostatuMota, int logelaKop, String kokapena, String telefonoa, String email, String latitudea, String longitudea, int prezioa,  String helbidea) {
 		this.Izena = izena;
 		this.Deskribapena = deskribapena;
 		this.Ostatu_Mota = ostatuMota;
@@ -51,6 +54,8 @@ public class Ostatu implements java.io.Serializable {
 		this.Email = email;
 		this.Latitudea = latitudea;
 		this.Longitudea = longitudea;
+		this.Prezioa = prezioa;
+		this.Helbidea = helbidea;
 	}
 	
 	public Ostatu(String izena, String deskribapena, String ostatuMota, String kokapena,

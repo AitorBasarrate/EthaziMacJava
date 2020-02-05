@@ -1,6 +1,6 @@
 package Nagusia;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader; 
 import java.io.File;
 import java.io.FileReader;
 import java.io.StringReader;
@@ -63,6 +63,7 @@ public class leerDatuak {
 				String descripcion = null;
 				String telefono = null;
 				String direccion = null;
+				String herria = null;
 				String marks = null; // zona ej:Costa vasca...
 				String disf_fis = null;
 				String disf_vis = null;
@@ -70,6 +71,7 @@ public class leerDatuak {
 				String disf_inte = null;
 				String disf_orga = null;
 				int logelaKop = 0;
+				int prezio = 0;
 				String email = null;
 				String ostatu_mota = null;
 				String latitud = null;
@@ -190,10 +192,11 @@ public class leerDatuak {
 					}
 					
 					logelaKop = randomZbk();
-
+					prezio = randomZbk();
+					
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, direccion + ", " + marks, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, marks, telefono, email, latitud, longitud, prezio, direccion + ", " + herria);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);
@@ -243,6 +246,7 @@ public class leerDatuak {
 				String descripcion = null;
 				String telefono = null;
 				String direccion = null;
+				String herria = null;
 				String marks = null; // zona ej:Costa vasca...
 				String disf_fis = null;
 				String disf_vis = null;
@@ -250,11 +254,13 @@ public class leerDatuak {
 				String disf_inte = null;
 				String disf_orga = null;
 				int logelaKop = 0;
+				int prezio = 0;
 				String email = null;
 				String ostatu_mota = null;
 				String latitud = null;
 				String longitud = null;
 
+				
 				if (nodoResponsable.getNodeType() == Node.ELEMENT_NODE) {
 
 					System.out.println("-------------------------");
@@ -370,11 +376,11 @@ public class leerDatuak {
 					}
 					
 					logelaKop = randomZbk();
-
+					prezio = randomZbk();
+					
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, direccion + ", " + marks, telefono, email, latitud, longitud);
-				App app = new App();
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, marks, telefono, email, latitud, longitud, prezio, direccion + ", " + herria);				App app = new App();
 				app.setup();
 				app.create(ostatu);
 				app.exit();
@@ -423,6 +429,7 @@ public class leerDatuak {
 				String descripcion = null;
 				String telefono = null;
 				String direccion = null;
+				String herria = null;
 				String marks = null; // zona ej:Costa vasca...
 				String disf_fis = null;
 				String disf_vis = null;
@@ -430,6 +437,7 @@ public class leerDatuak {
 				String disf_inte = null;
 				String disf_orga = null;
 				int logelaKop = 0;
+				int prezio = 0;
 				String email = null;
 				String ostatu_mota = null;
 				String latitud = null;
@@ -548,12 +556,22 @@ public class leerDatuak {
 					}else {
 						longitud = " ";
 					}
+					
+					listaDeNodos = primerElemento.getElementsByTagName("municipality");
+					elementos = (Element) listaDeNodos.item(0);
+					if (elementos != null) {
+						listaDeNodos = elementos.getChildNodes();
+						longitud = ((Node) listaDeNodos.item(0)).getNodeValue().toString();
+					}else {
+						longitud = " ";
+					}
 
 					logelaKop = randomZbk();
-
+					prezio = randomZbk();
+					
 				}
 
-				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, direccion + ", " + marks, telefono, email, latitud, longitud);
+				Ostatu ostatu = new Ostatu(titulo, descripcion, ostatu_mota, logelaKop, marks, telefono, email, latitud, longitud, prezio, direccion + ", " + herria);
 				App app = new App();
 				app.setup();
 				app.create(ostatu);

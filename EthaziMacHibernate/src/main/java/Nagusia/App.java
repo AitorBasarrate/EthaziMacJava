@@ -10,6 +10,9 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import Nagusia.Ostatu;
+import Nagusia.leerDatuak;
+
 public class App {
 
 	

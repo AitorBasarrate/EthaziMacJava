@@ -10,13 +10,10 @@
 		<property name="Izena" type="int" column="Izena"/>
 		<property name="Deskribapena" type="String" column="Deskribapena"/>
 		<property name="Ostatu_mota" type="String" column="Ostatu_mota"/>
-		<property name="Logela_kop" type="int" column="Logela_Mota"/>
 		<property name="Kokapena" type="String" column="Kokapena"/>
 		<property name="Telefonoa" type="String" column="Telefonoa"/>
 		<property name="Email" type="String" column="Email"/>
 		<property name="Latitudea" type="String" column="Latitudea"/>
 		<property name="Longitudea" type="String" column="Longitudea"/>
-		<property name="Prezioa" type="int" column="Prezioa"/>
-		<property name="Helbidea" type="String" column="Helbidea"/>
 	</class>
 </hibernate-mapping>

@@ -8,7 +8,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost/ethazi_mac</property>
+        <property name="connection.url">jdbc:mysql://localhost/mydb</property>
         <property name="connection.username">root</property>
 
         <!-- JDBC connection pool (use the built-in) -->
